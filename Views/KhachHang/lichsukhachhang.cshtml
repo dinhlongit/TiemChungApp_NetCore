@@ -1,0 +1,41 @@
+
+@{
+    ViewData["Title"] = "Student List";
+    var lskh = ViewBag.lskh;
+}
+<h2>@ViewData["Title"]</h2>
+
+
+
+<div class="text-center">
+
+<p>Lich Su Tiem Phong</p>
+
+<div class="text-center">
+    <table class="table"> 
+<tr>
+    <th>TEN BENH</th>
+    <th>Ma Vac Xin</th>
+    <th>Ten Vac Xin</th>
+        <th>So Mui</th>
+
+</tr>
+@if (lskh != null){
+    foreach(var khachhang in lskh){
+        <tr>
+            <td>@khachhang.TenBenh</td>
+             <td>@khachhang.MaVacXin</td>
+              <td>@khachhang.TenVacXin</td>
+                 <td>@khachhang.SoMui</td>
+        </tr>   
+    }
+}
+    </table>
+    
+    
+    
+     </div>
+
+
+</div>
+

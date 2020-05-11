@@ -1,0 +1,41 @@
+
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+<h2>@ViewData["ADD STUDENT"]</h2>
+
+<div class="container">
+<div class="row">
+
+<form class="form" action="/khachhang/storekhachhang" method="GET">
+<p>ID</p>
+<input class="form-control" type="text" name="MaKH" id = "MaKH" value="" dissable>
+<p>NAME</p>
+<input class="form-control" type="text" name="HoTenKH" id = "HoTenKH" value="">
+<p>So Dien Thoai</p>
+<input class="form-control" type="text" name="SoDienThoai" id = "SoDienThoai" value="">
+<p>Dia Chi</p>
+<input class="form-control" type="text" name="DiaChiKH" id = "DiaChiKH" value="">
+<p>Ngay Sinh</p>
+<input class="form-control" type="text" name="NgaySinh" id = "NgaySinh" value="">
+
+<p>Gioi Tinh</p>
+<select class="form-control" name="GioiTinh" id="GioiTinh">
+        <option value="1" >Nam</option>
+        <option value="0" >Nu</option>
+   
+</select>
+
+
+
+
+
+<button type="submit" class="btn btn-success" >ADD</button>
+ <a class="btn btn-warning" href="/khachhang">CANCEL</a>
+</form>
+
+</div>
+
+</div>
+

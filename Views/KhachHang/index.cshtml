@@ -1,0 +1,54 @@
+
+
+@{
+    ViewData["Title"] = "Student List";
+    var khachhangs = ViewBag.khachHangs;
+}
+<h2>@ViewData["Title"]</h2>
+
+<form class="form" action="/khachhang/searchkhachhang" method="GET">
+<input class="form-control" type="text" name="keyword" id = "keyword" value="">
+<button type="submit" class="btn btn-success" >Search</button>
+</form>
+
+
+
+<a href="/khachhang/addkhachhang" class="btn btn-warning">Thêm Mới Khach Hang</a>
+
+<div class="text-center">
+    <table class="table"> 
+<tr>
+    <th>ID</th>
+    <th>Ho Ten</th>
+    <th>Phone</th>
+        <th>DiaChiKH</th>
+    <th>Birthday</th>
+    <th>Gioi Tinh</th>
+      <th>ACTION</th>
+</tr>
+@if (khachhangs != null){
+    foreach(var khachhang in khachhangs){
+        <tr>
+            <td>@khachhang.MaKH</td>
+             <td>@khachhang.HoTenKH</td>
+              <td>@khachhang.SoDienThoai</td>
+                 <td>@khachhang.DiaChiKH</td>
+                    <td>@khachhang.NgaySinh</td>
+                    <td>@khachhang.GioiTinh</td>
+                
+   
+               <td>
+                     <a href="/khachhang/lichsukhachhang/@khachhang.MaKH" class="btn btn-success">LỊCH SỬ TIÊM</a>
+                   <a href="/khachhang/editkhachhang/@khachhang.MaKH" class="btn btn-success">EDIT</a>
+                   <a href="/khachhang/delete/@khachhang.MaKH" class="btn btn-success">DELETE</a>
+                     <a asp-controller="KhachHang" asp-action="Detail" asp-route-id="@khachhang.MaKH"  class="btn btn-success">DETAIL</a>
+               </td>
+        </tr>
+    }
+}
+    </table>
+    
+    
+    
+     </div>
+
